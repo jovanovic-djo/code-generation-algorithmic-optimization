@@ -8,30 +8,24 @@ class SnakeGame:
     def __init__(self):
         pygame.init()
 
-        # Screen dimensions
-        self.A = random.randint(10, 40)  # Number of cells wide
-        self.B = random.randint(10, 40)  # Number of cells tall
+        self.A = random.randint(10, 40)
+        self.B = random.randint(10, 40)
         self.CELL_SIZE = 20
         self.SCREEN_WIDTH = self.A * self.CELL_SIZE
         self.SCREEN_HEIGHT = self.B * self.CELL_SIZE
 
-        # Colors
         self.WHITE = (255, 255, 255)
         self.BLACK = (0, 0, 0)
 
-        # Screen setup
         self.screen = pygame.display.set_mode((self.SCREEN_WIDTH, self.SCREEN_HEIGHT))
         pygame.display.set_caption("Snake Game")
 
-        # Clock for controlling the frame rate
         self.clock = pygame.time.Clock()
 
-        # Game objects
         self.grid = Grid(self.A, self.B, self.CELL_SIZE, self.screen)
         self.snake = Snake(self.A, self.B, self.CELL_SIZE)
         self.apple = Apple(self.A, self.B, self.CELL_SIZE)
 
-        # Game state
         self.running = True
         self.win = False
         self.snake_speed = 10

@@ -14,17 +14,20 @@ class Snake:
 
     def change_direction(self, key):
         if key == pygame.K_UP and self.direction != "DOWN":
+            self.move_count += 1
             self.direction = "UP"
         elif key == pygame.K_DOWN and self.direction != "UP":
+            self.move_count += 1
             self.direction = "DOWN"
         elif key == pygame.K_LEFT and self.direction != "RIGHT":
+            self.move_count += 1
             self.direction = "LEFT"
         elif key == pygame.K_RIGHT and self.direction != "LEFT":
+            self.move_count += 1
             self.direction = "RIGHT"
 
     def move(self):
         if self.direction:
-            self.move_count += 1
             if self.direction == "UP":
                 self.position[1] -= 1
             elif self.direction == "DOWN":
