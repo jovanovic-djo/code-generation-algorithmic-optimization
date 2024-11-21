@@ -7,7 +7,7 @@ class Apple:
         self.grid_height = grid_height
         self.cell_size = cell_size
         self.position = [random.randint(0, grid_width - 1), random.randint(0, grid_height - 1)]
-        self.image = pygame.image.load("game/imgs/apple.png")
+        self.image = pygame.image.load("simulation/imgs/apple.png")
         self.image = pygame.transform.scale(self.image, (cell_size, cell_size))
 
     def draw(self, screen):
