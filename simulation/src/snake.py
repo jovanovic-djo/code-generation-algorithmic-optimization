@@ -9,7 +9,7 @@ class Snake:
         self.position = [random.randint(0, grid_width - 1), random.randint(0, grid_height - 1)]
         self.direction = None
         self.move_count = 0
-        self.image = pygame.image.load("simulation/imgs/snake.png")
+        self.image = pygame.image.load("simulation\\assets\\imgs\\snake.png")
         self.image = pygame.transform.scale(self.image, (cell_size, cell_size))
 
     def change_direction(self, key):

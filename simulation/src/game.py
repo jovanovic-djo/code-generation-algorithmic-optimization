@@ -8,8 +8,8 @@ class SnakeGame:
     def __init__(self):
         pygame.init()
 
-        self.A = random.randint(10, 40)
-        self.B = random.randint(10, 40)
+        self.A = random.randint(1, 40)
+        self.B = random.randint(1, 40)
         self.CELL_SIZE = 20
         self.SCREEN_WIDTH = self.A * self.CELL_SIZE
         self.SCREEN_HEIGHT = self.B * self.CELL_SIZE
@@ -53,8 +53,7 @@ class SnakeGame:
         if self.snake.position == self.apple.position:
             self.win = True
             self.running = False
-
-        if self.snake.move_count > 100:
+        if self.snake.move_count >= self.A * self.B * 35:
             self.running = False
 
     def draw(self):
@@ -72,4 +71,4 @@ class SnakeGame:
         text_rect = text.get_rect(center=(self.SCREEN_WIDTH // 2, self.SCREEN_HEIGHT // 2))
         self.screen.blit(text, text_rect)
         pygame.display.flip()
-        pygame.time.wait(1500)
+        pygame.time.wait(1000)
