@@ -10,6 +10,9 @@ class SnakeGame:
 
         self.A = random.randint(1, 40)
         self.B = random.randint(1, 40)
+
+        self.A = 30
+        self.B = 30
         self.CELL_SIZE = 20
         self.SCREEN_WIDTH = self.A * self.CELL_SIZE
         self.SCREEN_HEIGHT = self.B * self.CELL_SIZE
@@ -28,7 +31,7 @@ class SnakeGame:
 
         self.running = True
         self.win = False
-        self.snake_speed = 5
+        self.snake_speed = 60
 
     def run(self):
         while self.running:

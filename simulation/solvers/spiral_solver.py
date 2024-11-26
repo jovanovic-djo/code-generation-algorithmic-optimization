@@ -11,17 +11,9 @@ class SpiralSolver:
         self.turn_count = 0
 
     def solve(self):
-        """
-        Implements a spiral solving strategy:
-        1. Move in a spiral pattern increasing the spiral size
-        2. Change direction after a set number of steps
-        3. Increase spiral size after two direction changes
-        """
-        # If no direction is set, start moving
         if self.game.snake.direction is None:
             self.game.snake.direction = self.directions[self.current_dir_index]
         
-        # Change direction if needed
         if self.steps_taken >= self.steps_in_current_dir:
             # Reset steps taken
             self.steps_taken = 0
@@ -41,7 +33,7 @@ class SpiralSolver:
             self.steps_in_current_dir = self.total_steps_in_dir
         
         # Move snake
-        self.game.snake.move()
+        #self.game.snake.move()
         self.steps_taken += 1
 
 def run_spiral_solver(game):
