@@ -1,5 +1,4 @@
 import pygame
-from ..src.game import SnakeGame
 
 class SpiralSolver:
     def __init__(self, game):
