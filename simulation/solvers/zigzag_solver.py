@@ -39,7 +39,7 @@ class ZigZagSolver:
         if self.rows_completed >= self.max_grid_size:
             self.game.running = False
 
-def run_zigzag_solver(game):
+def run_solver(game):
     solver = ZigZagSolver(game)
     
     while game.running:

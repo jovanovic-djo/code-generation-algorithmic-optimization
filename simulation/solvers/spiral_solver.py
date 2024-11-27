@@ -29,7 +29,7 @@ class SpiralSolver:
 
         self.steps_taken += 1
 
-def run_spiral_solver(game):
+def run_solver(game):
     solver = SpiralSolver(game)
     
     while game.running:
