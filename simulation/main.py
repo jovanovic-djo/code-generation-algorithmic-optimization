@@ -3,7 +3,7 @@ from src.game import SnakeGame
 
 if __name__ == "__main__":
     
-    for _ in range(3):
+    for _ in range(1):
         game = SnakeGame()
         try:
             spiral_solver.run_spiral_solver(game)

@@ -7,56 +7,42 @@ class SpiralSolver:
         self.current_dir_index = 0
         self.steps_in_current_dir = 1
         self.steps_taken = 0
-        self.total_steps_in_dir = 1
-        self.turn_count = 0
+        self.total_steps_in_dir = 0
+        self.turn_count = 1
 
     def solve(self):
         if self.game.snake.direction is None:
             self.game.snake.direction = self.directions[self.current_dir_index]
-        
+
         if self.steps_taken >= self.steps_in_current_dir:
-            # Reset steps taken
             self.steps_taken = 0
-            
-            # Move to next direction
+
             self.current_dir_index = (self.current_dir_index + 1) % 4
             self.game.snake.direction = self.directions[self.current_dir_index]
-            
-            # Increment turn count
+
             self.turn_count += 1
-            
-            # Increase spiral size after two complete turns
+
             if self.turn_count % 2 == 0:
                 self.total_steps_in_dir += 1
-            
-            # Update steps for next direction
+
             self.steps_in_current_dir = self.total_steps_in_dir
-        
-        # Move snake
-        #self.game.snake.move()
+
         self.steps_taken += 1
 
 def run_spiral_solver(game):
-    """
-    Helper function to run the spiral solver
-    """
     solver = SpiralSolver(game)
     
     while game.running:
-        # Handle pygame events
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 game.running = False
                 break
         
-        # Solve the game
         solver.solve()
         
-        # Update game state
         game.update()
         game.draw()
         
-        # Check for game end conditions
         if not game.running:
             break
 

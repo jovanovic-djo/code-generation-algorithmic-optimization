@@ -31,7 +31,7 @@ class SnakeGame:
 
         self.running = True
         self.win = False
-        self.snake_speed = 60
+        self.snake_speed = 1
 
     def run(self):
         while self.running:
