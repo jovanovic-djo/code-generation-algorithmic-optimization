@@ -1,0 +1,2 @@
+timestamp,solver_type,success,moves,time_taken,snake_speed,total_distance,final_distance,grid_width,grid_height,turns
+2024-12-29 23:58:23,spiral,False,21,21.01,10,20,9,30,30,9
