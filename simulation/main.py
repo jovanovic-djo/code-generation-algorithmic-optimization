@@ -3,27 +3,27 @@ from src.game import SnakeGame
 
 if __name__ == "__main__":
 
-    for _ in range(3):
-        game = SnakeGame()
-        try:
-            zigzag_solver.run_solver(game)
-        finally:
-            game.show_game_over()
     
-    for _ in range(3):
+    for _ in range(60):
         game = SnakeGame()
         try:
             random_solver.run_solver(game)
         finally:
             game.show_game_over()
 
-    for _ in range(3):
+    for _ in range(60):
         game = SnakeGame()
         try:
             spiral_solver.run_solver(game)
         finally:
             game.show_game_over()
 
+    for _ in range(60):
+        game = SnakeGame()
+        try:
+            zigzag_solver.run_solver(game)
+        finally:
+            game.show_game_over()
 
     
 

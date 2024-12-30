@@ -6,7 +6,7 @@ from src.game import SnakeGame
 from assets.utils import log_to_csv
 
 class RandomSolver:
-    def __init__(self, game, initial_speed=300):
+    def __init__(self, game, initial_speed=100000):
         self.game = game
         self.game.snake_speed = initial_speed
         
