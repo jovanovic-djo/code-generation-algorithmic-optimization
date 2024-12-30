@@ -3,3 +3,4 @@ timestamp,solver_type,total_moves,time,finished,turns
 2024-12-30 16:33:35,random,841,4.63,0,116
 2024-12-30 16:33:43,random,1349,7.46,0,166
 2024-12-30 16:35:13,spiral,211,1.18,0,29
+2024-12-30 18:17:22,zigzag,6013,33.87,0,12

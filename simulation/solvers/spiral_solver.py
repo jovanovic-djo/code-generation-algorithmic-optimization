@@ -1,6 +1,5 @@
 import pygame
 import time
-import csv
 from datetime import datetime
 from src.game import SnakeGame
 
@@ -73,21 +72,6 @@ class SpiralSolver:
             self.finished = True
             self.success = False
             self.end_time = time.time()
-
-def log_to_csv(metrics, filename='solver_results.csv'):
-    """Log solver metrics to CSV file"""
-    file_exists = False
-    try:
-        with open(filename, 'r') as f:
-            file_exists = True
-    except FileNotFoundError:
-        pass
-
-    with open(filename, 'a', newline='') as f:
-        writer = csv.DictWriter(f, fieldnames=metrics.keys())
-        if not file_exists:
-            writer.writeheader()
-        writer.writerow(metrics)
 
 def run_solver(game):
     solver = SpiralSolver(game)

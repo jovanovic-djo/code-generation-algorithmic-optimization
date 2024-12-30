@@ -6,7 +6,7 @@ if __name__ == "__main__":
     for _ in range(1):
         game = SnakeGame()
         try:
-            spiral_solver.run_solver(game)
+            zigzag_solver.run_solver(game)
         finally:
             game.show_game_over()
     
