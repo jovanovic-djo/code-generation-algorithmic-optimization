@@ -5,7 +5,7 @@ from src.game import SnakeGame
 from assets.utils import log_to_csv
 
 class ZigZagSolver:
-    def __init__(self, game, initial_speed=200, horizontal_steps=1000):
+    def __init__(self, game, initial_speed=500, horizontal_steps=1000):
         self.game = game
         self.game.snake_speed = initial_speed
         
@@ -39,7 +39,7 @@ class ZigZagSolver:
             'solver_type': 'zigzag',
             'total_moves': self.moves_count,
             'time': round(solving_time, 2),
-            'finished': 1 if self.finished else 0,
+            'finished': "False" if self.finished else "True",
             'turns': self.turn_count
         }
 

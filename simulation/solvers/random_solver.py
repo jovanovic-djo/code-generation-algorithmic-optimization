@@ -1,12 +1,12 @@
 import pygame
 import time
-import csv
 import random
 from datetime import datetime
 from src.game import SnakeGame
+from assets.utils import log_to_csv
 
 class RandomSolver:
-    def __init__(self, game, initial_speed=200):
+    def __init__(self, game, initial_speed=300):
         self.game = game
         self.game.snake_speed = initial_speed
         
@@ -38,7 +38,7 @@ class RandomSolver:
             'solver_type': 'random',
             'total_moves': self.moves_count,
             'time': round(solving_time, 2),
-            'finished': 1 if self.finished else 0,
+            'finished': "False" if self.finished else "True",
             'turns': self.direction_changes
         }
 
@@ -84,21 +84,6 @@ class RandomSolver:
             self.success = False
             self.end_time = time.time()
 
-def log_to_csv(metrics, filename='solver_results.csv'):
-    """Log solver metrics to CSV file"""
-    file_exists = False
-    try:
-        with open(filename, 'r') as f:
-            file_exists = True
-    except FileNotFoundError:
-        pass
-
-    with open(filename, 'a', newline='') as f:
-        writer = csv.DictWriter(f, fieldnames=metrics.keys())
-        if not file_exists:
-            writer.writeheader()
-        writer.writerow(metrics)
-
 def run_solver(game):
     solver = RandomSolver(game)
     
@@ -106,7 +91,7 @@ def run_solver(game):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 game.running = False
-                solver.finished = True  # Mark as finished if manually quit
+                solver.finished = True
                 break
         
         solver.solve()
@@ -114,7 +99,6 @@ def run_solver(game):
         game.draw()
         
         if not game.running or solver.finished:
-            # Log metrics before closing
             metrics = solver.get_metrics()
             log_to_csv(metrics)
             break

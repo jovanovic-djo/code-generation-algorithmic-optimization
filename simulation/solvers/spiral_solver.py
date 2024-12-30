@@ -2,9 +2,10 @@ import pygame
 import time
 from datetime import datetime
 from src.game import SnakeGame
+from assets.utils import log_to_csv
 
 class SpiralSolver:
-    def __init__(self, game, initial_speed=200):
+    def __init__(self, game, initial_speed=300):
         self.game = game
         self.game.snake_speed = initial_speed
         
@@ -39,7 +40,7 @@ class SpiralSolver:
             'solver_type': 'spiral',
             'total_moves': self.moves_count,
             'time': round(solving_time, 2),
-            'finished': 1 if self.finished else 0,
+            'finished': "False" if self.finished else "True",
             'turns': self.turn_count
         }
 
